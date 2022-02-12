@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from functions import get_data_from_json, get_post_by_pk, get_comment_by_id, search_for_posts, search_posts_by_user
 
-app = Flask(__name__)
+app = Flask("MyProg")
 
 
 @app.route("/")
@@ -32,7 +32,6 @@ def search_by_keyword():
 def search_by_username(username):
     posts = search_posts_by_user(username)
     return render_template("user-feed.html", posts=posts)
-
 
 
 if __name__ == "__main__":
